@@ -1,0 +1,353 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black;
+    color:white
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+    position: relative;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#about .container .description p {
+    font-size: 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: white;
+}
+/* nav{
+    z-index: 1000;
+} */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+    font-size: 1.3em;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+} */
+
+
+/* nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    position: absolute; /* Position the menu absolutely */
+    /* top: 100%; Position it below the header */
+    /* width: 100%; Take full width */
+    /* background-color: #333; */
+    
+/* }  */
+
+nav.show ul {
+    height: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66c0ff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+   
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+section h2{
+    text-align: center;
+    font-size: 27px;
+}
+#about{
+    overflow: hidden;
+}
+#about .container{
+    width:90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:60px;
+    /* flex-wrap: wrap; */
+}
+.profile img,
+.description {
+    opacity: 0;
+    transform: translateX(-50px); /* Adjust the initial translation as needed */
+
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+.profile img {
+    animation-name: slideInLeft;
+    border: 2px solid blue;
+    display: block;
+    z-index: 10;
+}
+
+.description {
+    animation-name: slideInRight;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#skills
+{
+    opacity: 0;
+    transform: translateY(50px); /* Adjust the initial translation as needed */
+
+    animation: fadeInUp 3s ease-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#skills{
+    overflow: hidden;
+}
+#skills .container{
+    width:90%;
+    margin: auto;
+    
+}
+#skills .container .skillContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap:10px;
+    flex-wrap: wrap;
+
+}
+.skillContainer > div{
+    width: 23%;
+    box-shadow: 5px 10px 18px rgb(0, 204, 255);
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    /* background-color: rgb(168, 162, 162); */
+    padding: 10px;
+    /* border: 1px solid white; */
+    margin-top: 10px;
+    transition: transform 0.6s ease;
+    
+}
+.skillContainer > div:hover{
+    transform: rotate(360deg);
+}
+.skillContainer > div >img{
+    width:70%
+}
+#projects{
+    overflow: hidden;
+}
+#projects .container{
+    width:90%;
+    margin: auto;
+}
+.projects-container{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    
+}
+.projects-container > div{
+    border: 2px solid blue;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 5px 10px 18px rgb(0, 204, 255);
+    transition: transform 0.3s ease;
+}
+.projects-container >div:hover{
+    transform: scale(1.1);
+}
+.projects-container > div > img{
+    width: 100%;
+}
+.projects-container > div > p > a{
+    color:white
+}
+#contact .container{
+    width:90%;
+    margin: auto;
+    text-align: center;
+}
+#contact .container p{
+ font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    #projects{
+        overflow: hidden;
+    }
+    #projects .container{
+        width:90%;
+        margin: auto;
+    }
+    .projects-container{
+        width:100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:30px;
+        
+    }
+    #about{
+        overflow: hidden;
+    }
+    #about .container{
+        width:90%;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:60px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .profile img{
+        width: 80%;
+        margin: auto;
+    }
+    nav ul {
+        /* list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; */
+        flex-direction: column;
+        align-items: center;
+        /* height: 0; */
+        overflow: hidden;
+        transition: height 0.3s ease;
+        position: absolute; 
+        top: 100%; 
+        width: 100%; 
+        background-color: #333;
+        z-index: 1;
+        
+    }
+    
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: #66c0ff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #3385ff;
+}

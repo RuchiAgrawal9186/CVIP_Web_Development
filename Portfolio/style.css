@@ -10,32 +10,38 @@ body {
 header {
     background-color: #333;
     padding: 10px 0;
-    position: relative;
+    width: 100%;
+    /* position: relative; */
+    position: fixed;
 }
 header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
+
 
 #about .container {
     max-width: 960px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -5%;
 }
 #about .container .description p {
     font-size: 20px;
+}
+#about .container .description h2{
+    margin-top: 17%;
 }
 
 .logo {
     font-size: 1.5em;
     color: white;
 }
-/* nav{
-    z-index: 1000;
-} */
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -274,6 +280,7 @@ section h2{
 
     .menu-toggle {
         display: flex;
+        margin-right: 8%;
     }
     #projects{
         overflow: hidden;
@@ -320,9 +327,17 @@ section h2{
         top: 100%; 
         width: 100%; 
         background-color: #333;
-        z-index: 1;
+        z-index: 10;
         
     }
+    #about .container .profile {
+        margin-top: 30%;
+        z-index: -1; 
+
+    }
+    /* #about .container .description h2{
+        margin-top: 17%;
+    } */
     
 }
 

@@ -1,16 +1,19 @@
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     background-color: black;
-    color:white
+    color:white;
+    /* scroll-behavior: smooth; */
 }
 
 header {
     background-color: #333;
     padding: 10px 0;
     width: 100%;
+    top:0;
     /* position: relative; */
     position: fixed;
 }
@@ -42,14 +45,20 @@ header .container{
     color: white;
 }
 
-nav ul {
+nav{
+    padding-right: 10%;
+}
+
+/* nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    overflow: hidden;
+    transition: height 0.3s ease;
+} */
 
 nav li {
     margin-right: 20px;
@@ -60,25 +69,29 @@ nav a {
     text-decoration: none;
     color: white;
     transition: color 0.3s ease;
-} */
+} 
 
 
-/* nav ul {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    height: 0;
+
+    /* height: 0; */
     overflow: hidden;
-    transition: height 0.3s ease;
-    position: absolute; /* Position the menu absolutely */
-    /* top: 100%; Position it below the header */
-    /* width: 100%; Take full width */
+    /* transition: height 0.3s ease; */
+    position: absolute; 
+    /* top: 0; */
+    justify-content: space-around;
+    /* width: 90%;  */
+    object-fit: cover;
+    /* padding-right: 5%; */
     /* background-color: #333; */
     
-/* }  */
+} 
 
 nav.show ul {
     height: auto;
@@ -88,11 +101,12 @@ nav a {
     text-decoration: none;
     color: white;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
-nav a:hover {
+ nav >ul >li > a:hover {
     color: #66c0ff;
-}
+} 
 
 .menu-toggle {
     display: none;

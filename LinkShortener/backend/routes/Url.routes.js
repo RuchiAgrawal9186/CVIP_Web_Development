@@ -29,25 +29,6 @@ urlRouter.post("/shortUrls", async (req, res) => {
   }
 });
 
-// Route to redirect to the full URL based on the short URL
-// urlRouter.get('/:shortUrl', async (req, res) => {
-//   try {
-//     const shortUrl = await urlModel.findOne({ short: req.params.shortUrl });
-//     console.log(shortUrl)
-//     if (shortUrl == null) {
-//       return res.status(404).json({ error: "Short URL not found" });
-//     }
-//     await shortUrl.clicks++;
-//     shortUrl.save();
-//     console.log(shortUrl.full)
-//     res.redirect(shortUrl.full);
-//     // res.redirect(shortUrl.full);
-//   } catch (error) {
-//     console.error("Error redirecting to full URL:", error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
 urlRouter.get('/:shortUrl', async (req, res) => {
     try {
       const shortUrl = await urlModel.findOne({ short: req.params.shortUrl });

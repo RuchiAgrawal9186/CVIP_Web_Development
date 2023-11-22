@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 // import {Link} from "react-router-dom"
 import axios from 'axios';
 import "./App.css"
-import { Link ,useHistory} from 'react-router-dom';
+import {url} from "../src/url.js"
+import { Link} from 'react-router-dom';
 
 function App() {
   const [shortUrls, setShortUrls] = useState([]);
@@ -10,7 +11,7 @@ function App() {
   // const history = useHistory();
   useEffect(() => {
     // Fetch the short URLs from the server when the component mounts
-    axios.get('http://localhost:8080')
+    axios.get(`${url}`)
       .then(response => {
         setShortUrls(response.data.shorturls)
         // console.log(response.data.shorturls.full)
@@ -23,7 +24,7 @@ function App() {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:8080/shortUrls', { full: fullLink });
+      const response = await axios.post(`${url}/shortUrls`, { full: fullLink });
       console.log('POST Response:', response.data);
       
       if (response.data.success) {
@@ -45,7 +46,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.get(`http://localhost:8080/delete/${id}`);
+      await axios.get(`${url}/delete/${id}`);
       setShortUrls(shortUrls.filter(url => url._id !== id));
     } catch (error) {
       console.error('Error deleting link:', error);
@@ -85,9 +86,6 @@ function App() {
               <div className="link-box">
                 <div className="full">
                   
-                  {console.log("url object:", url)}
-                  {console.log("Full URL:", url.full)}
-
                   <a href={url.full} target="_blank" rel="noopener noreferrer">
           {url.full}
         </a>
